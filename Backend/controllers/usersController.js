@@ -54,7 +54,7 @@ const updateUser = asyncHandler(async (req, res) => {
     }
     //check for duplicate
     
-    const user = await User.findOne({ 'username': username }).exec();
+    const user = await User.findOne({ _id : id }).exec();
     
     if(!user){
         return res.status(409).json({ message: 'Uesr not found'});
